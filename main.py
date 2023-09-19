@@ -41,7 +41,7 @@ def main():
             else:
                 break
 
-    dictionary = { "urls": pics, "next_post_date": data["next_post_date"]}
+    dictionary = { "next_post_date": data["next_post_date"], "urls": pics}
     with open("data.json", "w") as outfile:
         json.dump(dictionary, outfile)
 
