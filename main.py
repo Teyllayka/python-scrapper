@@ -13,7 +13,6 @@ def main():
     with open("data.json", "r") as outfile:
        data = json.load(outfile)
 
-    print(data["next_post_date"])
 
     url = f"https://www.pinterest.com/search/pins/?q={'%20'.join(sys.argv[2:])}&rs=typed"
 
@@ -41,7 +40,7 @@ def main():
             else:
                 break
 
-    dictionary = { "next_post_date": data["next_post_date"], "urls": pics}
+    dictionary = { "next_post_date": data["next_post_date"], "post_id": data["post_id"],  "urls": pics}
     with open("data.json", "w") as outfile:
         json.dump(dictionary, outfile)
 
