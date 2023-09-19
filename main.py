@@ -29,7 +29,7 @@ while len(pics) < int(sys.argv[1]):
     breads = driver.find_elements(By.TAG_NAME, "img")
     for i in breads:
         if len(pics) < int(sys.argv[1]):
-            pics.append(i.get_attribute("src"))
+            pics.append(i.get_attribute("src").replace(".com/236x/", ".com/564x/"))
         else:
             break
         
